@@ -1,0 +1,6 @@
+{
+  "name": "Gemini",
+  "description": "A multi-turn Gemini AI chatbot and photo analysis assistant built for Android 8+ with role-based personas and persistent conversation history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

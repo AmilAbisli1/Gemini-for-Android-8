@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Gemini</string>
+    <string name="auth_tagline">Android 8+ AI Companion</string>
+    <string name="auth_headline">Think, create, and see clearly with Gemini</string>
+    <string name="auth_subtitle">Sign in with Google to sync your multi-turn conversations, switch specialized AI roles, and analyze photos using Gemini 4 Argon.</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="auth_checking_session">Checking session…</string>
+    <string name="auth_signing_in">Signing in…</string>
+    <string name="feature_chat_title">Multi-turn Gemini Chat</string>
+    <string name="feature_chat_desc">Streaming answers with preserved context across every thread</string>
+    <string name="feature_vision_title">Photo Understanding</string>
+    <string name="feature_vision_desc">Upload photos and inspect details with Gemini 4 Argon</string>
+    <string name="feature_roles_title">Specialized AI Roles</string>
+    <string name="feature_roles_desc">Switch between Assistant, Deep Thinker, Vision Analyst &amp; Coder</string>
+    <string name="analyze_photo_card_title">Analyze a Photo with Gemini 4 Argon</string>
+    <string name="analyze_photo_card_desc">Pick any photo from your device to describe scenes, read text, or solve problems</string>
+    <string name="suggested_prompts_label">TRY ASKING</string>
+    <string name="composer_hint">Ask Gemini anything…</string>
+    <string name="composer_hint_photo">Ask a question about this photo…</string>
+    <string name="thinking_status">Gemini is thinking…</string>
+    <string name="new_chat">New Chat</string>
+    <string name="empty_history_hint">Your saved conversations will appear here.</string>
+    <string name="cd_hero_banner">Gemini cosmic light banner</string>
+    <string name="cd_open_menu">Open navigation drawer</string>
+    <string name="cd_switch_role">Switch assistant role and model</string>
+    <string name="cd_new_chat">Start a new chat</string>
+    <string name="cd_attach_photo">Attach photo for analysis</string>
+    <string name="cd_remove_photo">Remove attached photo</string>
+    <string name="cd_attached_photo">Attached photo preview</string>
+    <string name="cd_send_message">Send message</string>
+    <string name="cd_stop_generation">Stop generating</string>
+    <string name="cd_copy_response">Copy response</string>
+    <string name="cd_delete_chat">Delete conversation</string>
+    <string name="cd_sign_out">Sign out</string>
+    <string name="cd_dismiss_error">Dismiss error</string>
+</resources>

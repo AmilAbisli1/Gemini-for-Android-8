@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "Conversation": {
+      "title": "Conversation",
+      "description": "A multi-turn Gemini AI chat conversation owned by a signed-in user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the conversation owner."
+        },
+        "title": {
+          "type": "string",
+          "description": "Short conversation title derived from the first user prompt."
+        },
+        "personaId": {
+          "type": "string",
+          "enum": ["general", "reasoning", "vision", "coding", "fast"],
+          "description": "Active system-instruction role identifier."
+        },
+        "modelName": {
+          "type": "string",
+          "enum": ["gemini-3.8-flash", "gemini-4-argon", "gemini-3.5-flash-lite"],
+          "description": "Gemini model identifier used in this conversation."
+        },
+        "lastMessagePreview": {
+          "type": "string",
+          "description": "Short preview snippet of the latest message."
+        },
+        "messageCount": {
+          "type": "integer",
+          "description": "Number of persisted messages in the conversation."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp written with FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp updated with FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "personaId",
+        "modelName",
+        "lastMessagePreview",
+        "messageCount",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "An individual user or model turn inside a Gemini conversation.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the message owner."
+        },
+        "conversationId": {
+          "type": "string",
+          "description": "Parent conversation document ID."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["user", "model"],
+          "description": "Turn author role: user or model."
+        },
+        "text": {
+          "type": "string",
+          "description": "Message text content."
+        },
+        "hasImage": {
+          "type": "boolean",
+          "description": "Whether this turn included an attached photo."
+        },
+        "localImagePath": {
+          "type": "string",
+          "description": "Optional app-private file path to the compressed local photo thumbnail."
+        },
+        "modelUsed": {
+          "type": "string",
+          "description": "Optional Gemini model name that generated this turn."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp written with FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "conversationId",
+        "role",
+        "text",
+        "hasImage",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/conversations/{conversationId}": {
+      "schema": {
+        "$ref": "#/entities/Conversation"
+      },
+      "description": "User-owned Gemini chat conversations."
+    },
+    "/users/{userId}/conversations/{conversationId}/messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/ChatMessage"
+      },
+      "description": "Ordered message turns belonging to a user's Gemini conversation."
+    }
+  }
+}
